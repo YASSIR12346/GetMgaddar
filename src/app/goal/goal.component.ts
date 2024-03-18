@@ -10,6 +10,15 @@ import { Goal } from '../Models/Goal';
 })
 export class GoalComponent implements OnInit{
 
+  
+  displayedColumns: string[] = [
+    'deadline',
+    'name',
+    'duration',
+    'completed',
+    'target',
+  ];
+
   private readonly goalService=inject(GoalService);
   dataSource = new MatTableDataSource<Goal>();
 
