@@ -1,0 +1,7 @@
+<div  class="text-center mt-4" >
+    <button (click)="toggle()" mat-raised-button >Add Exercice</button>
+  </div>
+  
+  <mg-add-exercice  (close)="toggle()" *ngIf="displayed"></mg-add-exercice>
+  
+  <mg-listexercices></mg-listexercices>

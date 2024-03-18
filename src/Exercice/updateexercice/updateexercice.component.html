@@ -1,0 +1,38 @@
+<div class="mx-auto bg-white p-8 rounded-lg  w-96">
+    <h2 class="text-2xl font-semibold mb-4">Update Exercice</h2>
+    <form (ngSubmit)="updateExercice()" [formGroup]="exerciceForm!" class="example-form">
+        <mat-form-field class="example-full-width">
+            <mat-label>Name</mat-label>
+            <input type="text" matInput formControlName="name" placeholder="Ex. PushUps">
+            <mat-error *ngIf="exerciceForm.get('name')?.hasError('minlength')">Name must be at least 3
+                caracters</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Calories</mat-label>
+            <input type="number" matInput formControlName="calories" placeholder="Ex. 300 Cal">
+            <mat-error *ngIf="exerciceForm.get('calories')?.hasError('min')">Calories must be at least 1 Cal</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Duration</mat-label>
+            <input type="number" matInput formControlName="duration" placeholder="Ex. 15 min">
+            <mat-error *ngIf="exerciceForm.get('duration')?.hasError('min')">Duartion must be at least 1 Min</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>State</mat-label>
+            <input type="text" matInput formControlName="state" placeholder="Ex. Validated">
+            <mat-error *ngIf="exerciceForm.get('state')?.hasError('minlength')">State must be at least 3
+                caracters</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Date</mat-label>
+            <input type="datetime-local" matInput formControlName="date">
+            <mat-error *ngIf="exerciceForm.get('date')?.hasError('required')">Date must be Provided</mat-error>
+        </mat-form-field>
+        <button type="submit" [disabled]="exerciceForm.invalid"
+            class="w-full py-2 px-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-md focus:outline-none focus:ring focus:ring-indigo-200 focus:ring-opacity-50">Update</button>
+    </form>
+</div>
